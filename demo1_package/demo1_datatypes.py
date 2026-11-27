@@ -113,3 +113,21 @@ print(type(name))
 
 name1=str()
 print(type(name1))
+
+
+log="no such element exception"
+
+prompt = f"""
+        You are QA automation expert
+
+        Analyze the log: ${log}
+
+    Provide:
+        1. Error summary
+        2. Possible root cause 
+        3. recommended fix 
+
+    """
+
+
+print(prompt)

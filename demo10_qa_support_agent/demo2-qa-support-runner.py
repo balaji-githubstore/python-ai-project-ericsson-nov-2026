@@ -14,3 +14,11 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 
 respone=agent.analyze_error_log(logs)
 print(respone)
+
+
+
+respone=agent.generate_testcase("""
+login functionality of facebook application
+""")
+
+print(respone)
