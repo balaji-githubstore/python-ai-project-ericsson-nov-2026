@@ -31,3 +31,21 @@ TC2 verify find valid status
         Should Be Equal As Strings    ${pet}[status]       sold
     END
     
+
+TC3 Add Valid Pet To Store
+    ${req_body}    Get File For Streaming Upload    ${EXECDIR}${/}files${/}data.json
+    &{header}    Create Dictionary    Content-Type=application/json    Connection=keep-live
+    ${response}     POST On Session    alias=petstore    url=/pet    data=${req_body}    headers=${header}    expected_status=200
+    Log    ${response.json()}
+
+    
+TC4 Update Valid Pet To Store
+    ${req_body}    Get File For Streaming Upload    ${EXECDIR}${/}files${/}data.json
+    &{header}    Create Dictionary    Content-Type=application/json    Connection=keep-live
+    ${response}     PUT On Session    alias=petstore    url=/pet    data=${req_body}    headers=${header}    expected_status=200
+    Log    ${response.json()}
+
+
+TC5 Delete valid pet
+    ${response}    GET On Session    alias=petstore    url=/pet/6559    expected_status=200
+    Log    ${response}
