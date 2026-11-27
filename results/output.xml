@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.15.2 on win32)" generated="2026-11-26T18:41:08.759565" rpa="false" schemaversion="5">
+<suite id="s1" name="PythonProject" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject">
+<suite id="s1-s1" name="Demo6 Selenium Robot" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo6_selenium_robot">
+<suite id="s1-s1-s1" name="Demo3 Tabs" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo6_selenium_robot\demo3_tabs.robot">
+<test id="s1-s1-s1-t1" name="TC2 Switch to new tab using NEW and MAIN" line="23">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-26T18:41:09.476389" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-26T18:41:09.475672" elapsed="0.792640"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-11-26T18:41:10.271165" elapsed="0.034227"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-11-26T18:41:10.306338" elapsed="0.001640"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-11-26T18:41:10.309714" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<arg>url=https://opensource-demo.orangehrmlive.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-11-26T18:41:10.308670" elapsed="29.723452"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-26T18:41:40.034682" level="INFO">Clicking element 'xpath=//a[contains(text(),'OrangeHRM')]'.</msg>
+<msg time="2026-11-26T18:41:40.039868" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=158.0.8127.38)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff6c0520f05]
+	(No symbol) [0x7ff6c0421db0]
+	(No symbol) [0x7ff6c02a3433]
+	(No symbol) [0x7ff6c0290a72]
+	(No symbol) [0x7ff6c02d14f6]
+	(No symbol) [0x7ff6c02d583f]
+	(No symbol) [0x7ff6c02bbea1]
+	(No symbol) [0x7ff6c02bd1d3]
+	(No symbol) [0x7ff6c09c0f4f]
+	(No symbol) [0x7ff6c09e7678]
+	(No symbol) [0x7ff6c09daf68]
+	(No symbol) [0x7ff6c063e62e]
+	(No symbol) [0x7ff6c04316f3]
+	(No symbol) [0x7ff6c042c304]
+	(No symbol) [0x7ff6c042c494]
+	(No symbol) [0x7ff6c041509c]
+	(No symbol) [0x7ffa8811dda7]
+	(No symbol) [0x7ffa8a4f9c5c]
+</msg>
+<msg time="2026-11-26T18:41:40.058789" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=158.0.8127.38)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff6c0520f05]
+	(No symbol) [0x7ff6c0421db0]
+	(No symbol) [0x7ff6c02a3433]
+	(No symbol) [0x7ff6c0290a72]
+	(No symbol) [0x7ff6c02d14f6]
+	(No symbol) [0x7ff6c02d583f]
+	(No symbol) [0x7ff6c02bbea1]
+	(No symbol) [0x7ff6c02bd1d3]
+	(No symbol) [0x7ff6c09c0f4f]
+	(No symbol) [0x7ff6c09e7678]
+	(No symbol) [0x7ff6c09daf68]
+	(No symbol) [0x7ff6c063e62e]
+	(No symbol) [0x7ff6c04316f3]
+	(No symbol) [0x7ff6c042c304]
+	(No symbol) [0x7ff6c042c494]
+	(No symbol) [0x7ff6c041509c]
+	(No symbol) [0x7ffa8811dda7]
+	(No symbol) [0x7ffa8a4f9c5c]
+</msg>
+<arg>xpath=//a[contains(text(),'OrangeHRM')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-11-26T18:41:40.033414" elapsed="0.205381">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=158.0.8127.38)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff6c0520f05]
+	(No symbol) [0x7ff6c0421db0]
+	(No symbol) [0x7ff6c02a3433]
+	(No symbol) [0x7ff6c0290a72]
+	(No symbol) [0x7ff6c02d14f6]
+	(No symbol) [0x7ff6c02d583f]
+	(No symbol) [0x7ff6c02bbea1]
+	(No symbol) [0x7ff6c02bd1d3]
+	(No symbol) [0x7ff6c09c0f4f]
+	(No symbol) [0x7ff6c09e7678]
+	(No symbol) [0x7ff6c09daf68]
+	(No symbol) [0x7ff6c063e62e]
+	(No symbol) [0x7ff6c04316f3]
+	(No symbol) [0x7ff6c042c304]
+	(No symbol) [0x7ff6c042c494]
+	(No symbol) [0x7ff6c041509c]
+	(No symbol) [0x7ffa8811dda7]
+	(No symbol) [0x7ffa8a4f9c5c]
+</status>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.239439" elapsed="0.000135"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>link=Book a Free Demo</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.239881" elapsed="0.000092"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=Form_getForm_FullName</arg>
+<arg>john wick</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.240189" elapsed="0.000111"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.240569" elapsed="0.000095"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.240935" elapsed="0.000229"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-11-26T18:41:40.241395" elapsed="0.000096"/>
+</kw>
+<status status="FAIL" start="2026-11-26T18:41:09.463912" elapsed="30.777852">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=158.0.8127.38)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff6c0520f05]
+	(No symbol) [0x7ff6c0421db0]
+	(No symbol) [0x7ff6c02a3433]
+	(No symbol) [0x7ff6c0290a72]
+	(No symbol) [0x7ff6c02d14f6]
+	(No symbol) [0x7ff6c02d583f]
+	(No symbol) [0x7ff6c02bbea1]
+	(No symbol) [0x7ff6c02bd1d3]
+	(No symbol) [0x7ff6c09c0f4f]
+	(No symbol) [0x7ff6c09e7678]
+	(No symbol) [0x7ff6c09daf68]
+	(No symbol) [0x7ff6c063e62e]
+	(No symbol) [0x7ff6c04316f3]
+	(No symbol) [0x7ff6c042c304]
+	(No symbol) [0x7ff6c042c494]
+	(No symbol) [0x7ff6c041509c]
+	(No symbol) [0x7ffa8811dda7]
+	(No symbol) [0x7ffa8a4f9c5c]
+</status>
+</test>
+<status status="FAIL" start="2026-11-26T18:41:08.830642" elapsed="31.417922"/>
+</suite>
+<status status="FAIL" start="2026-11-26T18:41:08.825709" elapsed="31.436428"/>
+</suite>
+<status status="FAIL" start="2026-11-26T18:41:08.771831" elapsed="31.505950"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="PythonProject" id="s1" pass="0" fail="1" skip="0">PythonProject</stat>
+<stat name="Demo6 Selenium Robot" id="s1-s1" pass="0" fail="1" skip="0">PythonProject.Demo6 Selenium Robot</stat>
+<stat name="Demo3 Tabs" id="s1-s1-s1" pass="0" fail="1" skip="0">PythonProject.Demo6 Selenium Robot.Demo3 Tabs</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-11-26T18:41:40.039868" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=158.0.8127.38)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff6c0520f05]
+	(No symbol) [0x7ff6c0421db0]
+	(No symbol) [0x7ff6c02a3433]
+	(No symbol) [0x7ff6c0290a72]
+	(No symbol) [0x7ff6c02d14f6]
+	(No symbol) [0x7ff6c02d583f]
+	(No symbol) [0x7ff6c02bbea1]
+	(No symbol) [0x7ff6c02bd1d3]
+	(No symbol) [0x7ff6c09c0f4f]
+	(No symbol) [0x7ff6c09e7678]
+	(No symbol) [0x7ff6c09daf68]
+	(No symbol) [0x7ff6c063e62e]
+	(No symbol) [0x7ff6c04316f3]
+	(No symbol) [0x7ff6c042c304]
+	(No symbol) [0x7ff6c042c494]
+	(No symbol) [0x7ff6c041509c]
+	(No symbol) [0x7ffa8811dda7]
+	(No symbol) [0x7ffa8a4f9c5c]
+</msg>
+</errors>
+</robot>
