@@ -15,6 +15,12 @@ print(type(c))
 
 my_name = "Bala"
 
+text="""
+kk
+sdsd
+
+"""
+
 print(my_name)
 print(type(my_name))
 
