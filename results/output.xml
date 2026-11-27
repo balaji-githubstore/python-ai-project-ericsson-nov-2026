@@ -1,150 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5.1 (Python 3.15.2 on win32)" generated="2026-11-27T19:26:40.679922" rpa="false" schemaversion="5">
+<robot generator="Robot 7.5.1 (Python 3.15.2 on win32)" generated="2026-11-27T19:47:24.354616" rpa="false" schemaversion="5">
 <suite id="s1" name="PythonProject" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject">
-<suite id="s1-s1" name="Demo10 Qa Support Agent" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo10_qa_support_agent">
-<suite id="s1-s1-s1" name="Demo3" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo10_qa_support_agent\demo3.robot">
-<kw name="Create Session" owner="RequestsLibrary" type="SETUP">
-<msg time="2026-11-27T19:26:42.059961" level="INFO">Creating Session using : alias=petstore, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=petstore</arg>
-<arg>url=https://petstore.swagger.io/v2</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-11-27T19:26:42.059560" elapsed="0.000830"/>
+<suite id="s1-s1" name="Demo11 Db" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo11_db">
+<suite id="s1-s1-s1" name="Demo1" source="d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\demo11_db\demo1.robot">
+<kw name="Connect To Database" owner="DatabaseLibrary" type="SETUP">
+<msg time="2026-11-27T19:47:24.550303" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2026-11-27T19:47:24.551285" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2026-11-27T19:47:24.681786" level="INFO">Connect to DB using : pymysql.connect(db='sql12841569', user='sql12841569', passwd=***, host='sql12.freesqldatabase.com', port=3306, charset='utf8mb4')</msg>
+<arg>db_module=pymysql</arg>
+<arg>db_name=sql12841569</arg>
+<arg>db_user=sql12841569</arg>
+<arg>db_password=h7ES8Aul7n</arg>
+<arg>db_port=3306</arg>
+<arg>db_host=sql12.freesqldatabase.com</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2026-11-27T19:47:24.548309" elapsed="2.806010"/>
 </kw>
-<test id="s1-s1-s1-t1" name="TC1 Add Valid Pet To Store" line="18">
-<try>
-<branch type="TRY">
-<kw name="Get File For Streaming Upload" owner="RequestsLibrary">
-<msg time="2026-11-27T19:26:42.066394" level="INFO">${req_body} = &lt;_io.BufferedReader name='d:\\Mine\\Company\\Ericsson-AI-ML-Nov 2026\\PythonProject\\files\\data.json'&gt;</msg>
-<var>${req_body}</var>
-<arg>${EXECDIR}${/}files${/}data.json</arg>
-<doc>Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter
-to other requests keywords.</doc>
-<status status="PASS" start="2026-11-27T19:26:42.066013" elapsed="0.000527"/>
+<test id="s1-s1-s1-t1" name="TC3" line="33">
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2026-11-27T19:47:27.406594" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;update Persons set LastName='john' where PersonID=1&lt;/code&gt;</msg>
+<msg time="2026-11-27T19:47:27.450611" level="INFO">Commit the transaction</msg>
+<arg>update Persons set LastName='john' where PersonID=1</arg>
+<doc>Executes the ``sql_string`` - as a single SQL command (default) or as separate statements.</doc>
+<status status="PASS" start="2026-11-27T19:47:27.405290" elapsed="0.095882"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-11-27T19:26:42.067204" level="INFO">&amp;{header} = { Content-Type=application/json | Connection=keep-live }</msg>
-<var>&amp;{header}</var>
-<arg>Content-Type=application/json</arg>
-<arg>Connection=keep-live</arg>
-<doc>Creates and returns a dictionary based on the given `items`.</doc>
-<status status="PASS" start="2026-11-27T19:26:42.066724" elapsed="0.000588"/>
+<kw name="Row Count" owner="DatabaseLibrary">
+<msg time="2026-11-27T19:47:27.526748" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select * from Persons where LastName='john' and PersonID=1&lt;/code&gt;</msg>
+<msg time="2026-11-27T19:47:27.570136" level="INFO">Commit the transaction</msg>
+<msg time="2026-11-27T19:47:27.616409" level="INFO">Retrieved 1 rows</msg>
+<msg time="2026-11-27T19:47:27.617007" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;PersonID&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;LastName&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FirstName&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Address&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;City&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;john&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Arun&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;12 Anna Nagar&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Chennai&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2026-11-27T19:47:27.618114" level="INFO">${Rows} = 1</msg>
+<var>${Rows}</var>
+<arg>select * from Persons where LastName='john' and PersonID=1</arg>
+<doc>Runs a query with the ``select_statement`` and returns the number of rows in the result.</doc>
+<status status="PASS" start="2026-11-27T19:47:27.525460" elapsed="0.093659"/>
 </kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T19:26:43.376016" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet 
- path_url=/v2/pet 
- headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-live', 'Content-Type': 'application/json', 'Content-Length': '289'} 
- body=&lt;_io.BufferedReader name='d:\\Mine\\Company\\Ericsson-AI-ML-Nov 2026\\PythonProject\\files\\data.json'&gt; 
- </msg>
-<msg time="2026-11-27T19:26:43.376643" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet 
- status=200, reason=OK 
- headers={'Date': 'Fri, 27 Nov 2026 13:56:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":6559,"category":{"id":0,"name":"string"},"name":"doggie-655","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"} 
- </msg>
-<msg time="2026-11-27T19:26:43.377473" level="INFO">d:\Mine\Company\Ericsson-AI-ML-Nov 2026\PythonProject\.venv\Lib\site-packages\urllib3\connectionpool.py:1129: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2026-11-27T19:26:43.378365" level="FAIL">Url: https://petstore.swagger.io/v2/pet Expected status: 200 != 404</msg>
-<var>${response}</var>
-<arg>alias=petstore</arg>
-<arg>url=/pet</arg>
-<arg>data=${req_body}</arg>
-<arg>headers=${header}</arg>
-<arg>expected_status=404</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2026-11-27T19:26:42.067455" elapsed="1.377185">Url: https://petstore.swagger.io/v2/pet Expected status: 200 != 404</status>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Rows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-11-27T19:47:27.620872" elapsed="0.002622"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-11-27T19:26:43.444920" elapsed="0.000111"/>
-</kw>
-<status status="FAIL" start="2026-11-27T19:26:42.065817" elapsed="1.379288">Url: https://petstore.swagger.io/v2/pet Expected status: 200 != 404</status>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-11-27T19:26:43.445672" level="ERROR">Error occurred during test execution</msg>
-<arg>Error occurred during test execution</arg>
-<arg>ERROR</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-11-27T19:26:43.445363" elapsed="0.016141"/>
-</kw>
-<kw name="Analyze Error Log" owner="demo1_qa_agent">
-<msg time="2026-11-27T19:26:54.076156" level="INFO">HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"</msg>
-<msg time="2026-11-27T19:26:54.077682" level="INFO">${response} = Okay, let's analyze this log and provide a comprehensive response.
-
-**1. Error Summary:**
-
-The log indicates a successful HTTP request to the Swagger UI endpoint (`https://petstore.swagger.io/v2/pet`)...</msg>
-<var>${response}</var>
-<arg>log=${error}</arg>
-<status status="PASS" start="2026-11-27T19:26:43.461776" elapsed="10.616077"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-11-27T19:26:54.078661" level="INFO">Okay, let's analyze this log and provide a comprehensive response.
-
-**1. Error Summary:**
-
-The log indicates a successful HTTP request to the Swagger UI endpoint (`https://petstore.swagger.io/v2/pet`) with a status code of 200.  However, the expected status is 404 (Not Found).  This suggests a potential issue with the API response being returned in a way that's not being interpreted correctly by the client.
-
-**2. Possible Root Cause:**
-
-Several possibilities could explain this discrepancy. Here's a breakdown of the most likely causes, ordered by probability:
-
-* **API Response Modification:** The API endpoint might have recently been modified, and the new response format is causing the client to interpret it as a 404. This is the *most probable* cause.
-* **Caching Issues:** The client or intermediary might be caching an older version of the API response. The new response might be being served from a cached location, preventing the client from receiving the correct 200 status.
-* **Rate Limiting/Throttling:** The client might be hitting the API rate limit, and the API is returning a 404 due to exceeding the limit.
-* **Incorrect Request Format:**  The client might be sending a request in a way that's not compatible with the API's expected format. This could be a subtle issue related to the request parameters or the request method.
-* **Internal API Error:**  There could be an internal error within the API itself, causing it to return a 404. (Less likely but possible).
-* **Client-Side Issue:** A bug in the client application (e.g., JavaScript) might be incorrectly handling the API response.
-
-**3. Recommended Fixes (Prioritized):**
-
-Here’s a breakdown of recommended actions, in order of potential impact and ease of implementation:
-
-1. **Verify API Response:** *Immediately* examine the API response from the Swagger UI endpoint.  Look for any changes in the response format, content type, or structure.  This is the *most important* first step.  Use browser developer tools (Network tab) to inspect the HTTP response headers.
-
-2. **Check Client-Side Code:**  If you have access to the client-side code (e.g., JavaScript in a web application), review the code that interacts with the API.  Specifically, look for:
-   * **Request Parameters:** Are the parameters being sent correctly?
-   * **Request Method:** Is the request method correct for the API endpoint?
-   * **Data Mapping:** Is the data being mapped correctly to the API's expected format?
-
-3. **Implement a Refresh/Retry Mechanism:**  For intermittent issues, consider adding a retry mechanism to the client.  The client could retry the request after a short delay, which might be triggered by the API response.
-
-4. **Check API Documentation:**  Ensure the API documentation clearly specifies the expected response format and any relevant error codes.
-
-5. **Monitor API Performance:**  If the API is experiencing issues, monitor its performance and response times.  A sudden drop in response times could indicate a problem.
-
-6. **Consider Logging:** Add more detailed logging to the client-side code to capture request details and response status. This can help with debugging and identifying the root cause.
-
-**Important Considerations:**
-
-* **Swagger UI Version:**  The specific error response from Swagger UI might depend on the version of the API you're using.
-* **API Version:**  If you're using a specific API version, ensure your client code is compatible with it.
-
-To give you even more tailored advice, could you tell me:
-
-*   What type of client are you using (e.g., JavaScript, Python, Java)?
-*   What is the client-side code doing when it requests the API?
-*   Can you provide a sample of the API response you are seeing? (If you can share the full response, that would be ideal).</msg>
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-11-27T19:26:54.078163" elapsed="0.000869"/>
-</kw>
-<status status="PASS" start="2026-11-27T19:26:43.445212" elapsed="10.633949"/>
-</branch>
-<status status="PASS" start="2026-11-27T19:26:42.065755" elapsed="12.013497"/>
-</try>
-<status status="PASS" start="2026-11-27T19:26:42.060590" elapsed="12.019326"/>
+<status status="PASS" start="2026-11-27T19:47:27.355062" elapsed="0.269894"/>
 </test>
-<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
-<msg time="2026-11-27T19:26:54.085840" level="INFO">Deleting All Sessions</msg>
-<doc>Removes all the session objects </doc>
-<status status="PASS" start="2026-11-27T19:26:54.085463" elapsed="0.000652"/>
+<kw name="Disconnect From Database" owner="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2026-11-27T19:47:27.638095" elapsed="0.001273"/>
 </kw>
-<status status="PASS" start="2026-11-27T19:26:40.814372" elapsed="13.272005"/>
+<status status="PASS" start="2026-11-27T19:47:24.454794" elapsed="3.184739"/>
 </suite>
-<status status="PASS" start="2026-11-27T19:26:40.799800" elapsed="13.293820"/>
+<status status="PASS" start="2026-11-27T19:47:24.435861" elapsed="3.209440"/>
 </suite>
-<status status="PASS" start="2026-11-27T19:26:40.696106" elapsed="13.401432"/>
+<status status="PASS" start="2026-11-27T19:47:24.370613" elapsed="3.303344"/>
 </suite>
 <statistics>
 <total>
@@ -154,11 +62,10 @@ To give you even more tailored advice, could you tell me:
 </tag>
 <suite>
 <stat name="PythonProject" id="s1" pass="1" fail="0" skip="0">PythonProject</stat>
-<stat name="Demo10 Qa Support Agent" id="s1-s1" pass="1" fail="0" skip="0">PythonProject.Demo10 Qa Support Agent</stat>
-<stat name="Demo3" id="s1-s1-s1" pass="1" fail="0" skip="0">PythonProject.Demo10 Qa Support Agent.Demo3</stat>
+<stat name="Demo11 Db" id="s1-s1" pass="1" fail="0" skip="0">PythonProject.Demo11 Db</stat>
+<stat name="Demo1" id="s1-s1-s1" pass="1" fail="0" skip="0">PythonProject.Demo11 Db.Demo1</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-11-27T19:26:43.445672" level="ERROR">Error occurred during test execution</msg>
 </errors>
 </robot>
