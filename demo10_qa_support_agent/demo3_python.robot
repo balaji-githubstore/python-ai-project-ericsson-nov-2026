@@ -1,9 +1,5 @@
 *** Settings ***
 Library    demo1_qa_agent.py
-
-*** Test Cases ***
-
-*** Settings ***
 Library    RequestsLibrary
 
 # Suite Setup - before triggering first testcase in current file. only once
